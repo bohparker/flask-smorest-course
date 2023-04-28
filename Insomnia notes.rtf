@@ -1,0 +1,36 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww17280\viewh13200\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf0 under Manage Environments, add:\
+	\{\
+	"url": "http://127.0.0.1:5000"\
+	\}\
+to create a shortcut for making urls using \{\{url\}\}\
+\
+\
+JWT authorization using requires a jwt token in the request header\
+in Insomnia, put the following in the Header:\
+Authorization : \'91access token received from logging in\'92\
+\
+OR\
+\
+after Bearer, press ctrl + Space, choose Response Body attribute\
+click on the red response body square\
+Under request select Post /login\
+under filter, add $.access_token which will return the access token\
+trigger behavior can be set to when expired for five minutes or 300 seconds\
+\
+OR\
+\
+you can add the above setting in the environment so you don\'92t have to do that for every request\
+environment looks like:\
+\{\
+	"url": "http://127.0.0.1:5000",\
+	"access_token": \'93Response > Body Attribute\'94\
+\}\
+\
+then after Bearer in Authorization Header add \{\{access_token\}\}}
